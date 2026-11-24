@@ -1,0 +1,217 @@
+{
+  "balances": [
+    [
+      "paper",
+      "10000",
+      "2026-10-16T18:58:19.380531+00:00"
+    ]
+  ],
+  "counts": {
+    "decisions": 0,
+    "event_log": 3,
+    "paper_source_episodes": 2,
+    "portfolio_balances": 1,
+    "positions": 0,
+    "trades": 0
+  },
+  "db_path": "C:\\1. Projects\\17. AlgoTrader\\.tmp-paper-unavailable-20261016-10000-b7e2a9d1\\tbot.db",
+  "decision_groups": [],
+  "duplicate_bar_keys": [],
+  "episode_groups": [
+    [
+      "paper",
+      "higher_timeframe_stale",
+      "StaleDataError",
+      "stop",
+      "open",
+      1,
+      1
+    ],
+    [
+      "paper",
+      "quote",
+      "StaleDataError",
+      "stop",
+      "open",
+      1,
+      2
+    ]
+  ],
+  "foreign_key_check": [],
+  "immutable_snapshots": {
+    "decisions": {
+      "count": 0,
+      "max_id": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "trades": {
+      "count": 0,
+      "max_id": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "integrity": "ok",
+  "latest_decisions": [],
+  "observed_at_utc": "2026-10-16T19:08:32.069401+00:00",
+  "pool_events": [
+    {
+      "bootstrap": true,
+      "dates": [
+        "2026-10-02",
+        "2026-10-05",
+        "2026-10-06",
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15"
+      ],
+      "error_type": null,
+      "event": "pool_refresh_applied",
+      "generation": 1,
+      "index_id": "4821c9aa-36e8-4743-b37c-861e58581b25",
+      "monitoring": [],
+      "selected": [
+        "VTBR",
+        "SBER",
+        "ROSN",
+        "MTLR",
+        "VKCO",
+        "SMLT",
+        "GAZP",
+        "MAGN",
+        "RAGR",
+        "ALRS",
+        "WUSH",
+        "TATN",
+        "PLZL",
+        "SIBN",
+        "AFLT",
+        "SNGSP",
+        "RUAL",
+        "SGZH",
+        "NVTK",
+        "CHMF",
+        "YDEX"
+      ],
+      "slot": "2026-10-16T15:15:00+00:00",
+      "ts": "2026-10-16T15:26:49.474919+00:00"
+    },
+    {
+      "bootstrap": true,
+      "dates": [
+        "2026-10-02",
+        "2026-10-05",
+        "2026-10-06",
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15"
+      ],
+      "error_type": null,
+      "event": "pool_refresh_applied",
+      "generation": 2,
+      "index_id": "4821c9aa-36e8-4743-b37c-861e58581b25",
+      "monitoring": [],
+      "selected": [
+        "VTBR",
+        "SBER",
+        "ROSN",
+        "MTLR",
+        "VKCO",
+        "SMLT",
+        "GAZP",
+        "MAGN",
+        "RAGR",
+        "ALRS",
+        "WUSH",
+        "TATN",
+        "PLZL",
+        "SIBN",
+        "AFLT",
+        "SNGSP",
+        "RUAL",
+        "SGZH",
+        "NVTK",
+        "CHMF",
+        "YDEX"
+      ],
+      "slot": "2026-10-16T17:45:00+00:00",
+      "ts": "2026-10-16T17:58:55.993617+00:00"
+    },
+    {
+      "bootstrap": true,
+      "dates": [
+        "2026-10-02",
+        "2026-10-05",
+        "2026-10-06",
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15"
+      ],
+      "error_type": null,
+      "event": "pool_refresh_applied",
+      "generation": 3,
+      "index_id": "4821c9aa-36e8-4743-b37c-861e58581b25",
+      "monitoring": [],
+      "selected": [
+        "VTBR",
+        "SBER",
+        "ROSN",
+        "MTLR",
+        "VKCO",
+        "SMLT",
+        "GAZP",
+        "MAGN",
+        "RAGR",
+        "ALRS",
+        "WUSH",
+        "TATN",
+        "PLZL",
+        "SIBN",
+        "AFLT",
+        "SNGSP",
+        "RUAL",
+        "SGZH",
+        "NVTK",
+        "CHMF",
+        "YDEX"
+      ],
+      "slot": "2026-10-16T18:45:00+00:00",
+      "ts": "2026-10-16T18:58:19.390242+00:00"
+    }
+  ],
+  "positions": [],
+  "restart_preservation": {
+    "decisions": {
+      "preserved": true,
+      "prior_count": 0
+    },
+    "trades": {
+      "preserved": true,
+      "prior_count": 0
+    }
+  },
+  "schema_versions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "trade_modes": []
+}

@@ -1,0 +1,32 @@
+# секреты - никогда в репозитории
+.env
+*.env
+secrets/
+*.key
+*.pem
+*.p12
+
+# состояние и данные
+data/
+*.db
+*.db-wal
+*.db-shm
+logs/
+reports/
+backup/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# ide/os
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,37 @@
+services:
+  tbot:
+    build: .
+    image: tbot:latest
+    container_name: tbot
+    restart: unless-stopped
+    env_file:
+      - .env               # только пути и флаги, НЕ токены (см. 13_SECURITY)
+    environment:
+      TBOT_TRADING_MODE: paper        # live включается человеком вручную
+      TBOT_TZ_DISPLAY: Europe/Moscow
+    ports:
+      - "127.0.0.1:8080:8080"         # наружу только через nginx + basic-auth
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./secrets:/app/secrets
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+  # опционально: reverse proxy c авторизацией
+  # nginx:
+  #   image: nginx:alpine
+  #   restart: unless-stopped
+  #   ports: ["443:443"]
+  #   volumes:
+  #     - ./ops/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  #     - /etc/letsencrypt:/etc/letsencrypt:ro
+  #     - htpasswd:/etc/nginx/htpasswd:ro
+  #   depends_on: [tbot]
+
+# volumes:
+#   htpasswd:

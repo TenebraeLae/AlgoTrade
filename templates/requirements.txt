@@ -1,0 +1,36 @@
+# ИМЕНА И ВЕРСИИ НИЖЕ - ЗАГОТОВКИ. Каждую строку сверить (TODO(VERIFY))
+# и зафиксировать точную версию после проверки. Не ставить «latest».
+#
+# --- брокер (VERIFY: точное имя пакета Tinkoff Invest SDK для Python) ---
+# tinkoff-invest==<VERIFY>
+# grpcio==<VERIFY>
+# protobuf==<VERIFY>
+
+# --- приложение ---
+# fastapi==<VERIFY>
+# uvicorn[standard]==<VERIFY>
+# websockets==<VERIFY>
+# pydantic==<VERIFY>
+# pydantic-settings==<VERIFY>
+
+# --- данные/расчёт ---
+# numpy==<VERIFY>
+# pandas==<VERIFY>
+
+# --- секреты ---
+# cryptography==<VERIFY>
+# keyring==<VERIFY>
+
+# --- уведомления ---
+# vk-api==<VERIFY>   # или requests + LongPoll вручную
+
+# --- оптимизация (только M10, VERIFY API библиотеки) ---
+# deap==<VERIFY>
+
+# --- dev/lint (в прод-образ не входят) ---
+# pytest==<VERIFY>
+# pytest-asyncio==<VERIFY>
+# hypothesis==<VERIFY>
+# mypy==<VERIFY>
+# ruff==<VERIFY>
+# black==<VERIFY>

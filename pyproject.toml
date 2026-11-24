@@ -1,0 +1,45 @@
+[project]
+name = "tbot"
+version = "0.1.0"
+description = "Autonomous trading bot for T-Investments (paper by default)"
+requires-python = ">=3.11"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_configs = true
+disallow_any_generics = true
+
+# Money and time must stay explicit; per-module strictness where it matters most.
+[[tool.mypy.overrides]]
+module = "trading_bot.risk_manager.*"
+warn_return_any = true
+
+[[tool.mypy.overrides]]
+module = "keyring.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# TODO(VERIFY): убрать когда пакет tinkoff-investments будет установлен и принесёт типы.
+module = "tinkoff.*"
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "UP", "DTZ", "SIM", "RET", "PTH", "ANN"]
+ignore = ["ANN401"]
+
+# datetime.now() без tz запрещён правилом DTZ (включено в select выше), см. docs/02_CODING_RULES.md.
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-markers"
+markers = [
+  "red: expected failing until TODO(VERIFY) is resolved",
+]

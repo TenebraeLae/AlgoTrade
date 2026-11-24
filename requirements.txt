@@ -1,0 +1,60 @@
+# ИМЕНА И ВЕРСИИ НИЖЕ — сверены в этой сессии (см. CHANGELOG_AI.md), кроме помеченных VERIFY.
+#
+# --- брокер ---
+# Подтверждено установкой и живым импортом в .venv этой сессии (2026-09-26):
+#   pip install tinkoff-investments   -> 404 от PyPI (пакет реально отсутствует в индексе,
+#     та же судьба у зависимости `tinkoff` — похоже, пакеты с именем tinkoff* были
+#     удалены/не публикуются на PyPI, TODO(VERIFY): подтвердить причину и что это не
+#     временный сбой конкретно этого индекса перед продом).
+#
+# **Важно**: пакет tinkoff-investments честно сам объявляет несуществующую зависимость
+# `tinkoff<0.2.0,>=0.1.1` в своём pyproject — обычный `pip install -r requirements.txt`
+# без `--no-deps` на этой строке всегда упадёт (проверено живым `docker build`
+# 2026-09-26: "ERROR: Could not find a version that satisfies the requirement
+# tinkoff<0.2.0,>=0.1.1"). Поэтому эта строка закомментирована и НЕ устанавливается
+# обычным `pip install -r requirements.txt`. Установка — отдельным шагом с `--no-deps`
+# (см. `Dockerfile`, шаг после основного `pip install -r requirements.txt`; для `.venv` —
+# `pip install --no-deps "tinkoff-investments @ git+https://github.com/RussianInvestments/
+# invest-python.git@0.2.0-beta117"` вручную после `pip install -r requirements.txt`).
+# Транзитивные зависимости SDK (подтверждены `docker build` без --no-deps,
+# когда pip реально решает совместимость) ниже — уже в соватимых с pyproject SDK версиях:
+grpcio==1.84.0
+protobuf==4.25.9
+cachetools==5.5.2
+deprecation==2.1.0
+python-dateutil==2.9.0.post0
+# tinkoff-investments @ git+https://github.com/RussianInvestments/invest-python.git@0.2.0-beta117
+#   ^^^ установите этот пакет отдельной командой с `--no-deps` СРАЗУ ПОСЛЕ этого файла
+#   (см. команду выше). Не раскомментировать без --no-deps — сборка requirements.txt упадёт.
+
+# --- секреты (проверено в этой сессии: `pip show`/`pip index versions` в .venv) ---
+keyring==25.7.0
+tzdata==2026.4          # Windows не имеет системной IANA tz-базы; на Linux безвреден
+
+# --- конфиг ---
+pydantic==2.13.5
+pydantic-settings==2.15.0
+python-dotenv==1.2.3
+
+# --- приложение (не реализовано в этой сессии, версии не проверялись) ---
+# fastapi==<VERIFY>
+# uvicorn[standard]==<VERIFY>
+# websockets==<VERIFY>
+
+# --- данные/расчёт (не реализовано в этой сессии, версии не проверялись) ---
+# numpy==<VERIFY>
+# pandas==<VERIFY>
+
+# --- уведомления (не реализовано в этой сессии, версии не проверялись) ---
+# vk-api==<VERIFY>   # или requests + LongPoll вручную
+
+# --- оптимизация (только M10, VERIFY API библиотеки) ---
+# deap==<VERIFY>
+
+# --- dev/lint (в прод-образ не входят; проверено в этой сессии в .venv) ---
+pytest==9.1.1
+mypy==2.3.1
+ruff==0.16.9
+black==26.5.1
+hypothesis==6.168.1     # property-тесты risk_manager.py (M5): установлена и используется, не VERIFY
+# pytest-asyncio==<VERIFY>  # понадобится с async-стримами в M3, пока не используется

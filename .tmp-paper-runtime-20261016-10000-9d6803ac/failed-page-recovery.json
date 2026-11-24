@@ -1,0 +1,17 @@
+{
+  "complete_count": 105,
+  "count": 105,
+  "finished_at_utc": "2026-10-16T11:57:53.930037+00:00",
+  "first_bar_utc": "2026-10-14T11:50:00+00:00",
+  "from_utc": "2026-10-14T11:50:50.529050+00:00",
+  "instrument_id": "BBG000NLC9Z6",
+  "last_bar_utc": "2026-10-15T11:30:00+00:00",
+  "max_attempts": 1,
+  "ok": true,
+  "orders_called": false,
+  "started_at_utc": "2026-10-16T11:57:53.408614+00:00",
+  "target": "sandbox",
+  "timeframe": "5m",
+  "to_utc": "2026-10-15T11:50:50.529050+00:00",
+  "scope": "manual one-page recovery probe, not automatic runtime recovery or full M7 acceptance"
+}
